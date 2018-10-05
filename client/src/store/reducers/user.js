@@ -1,0 +1,24 @@
+import { FETCH_USER_SUCCESS } from 'store/actions/user';
+
+// type User = {
+//   name: String,
+//   city: String,
+//   state: String,
+//   picture: String
+// }
+
+const defaultState = {
+  users: []
+};
+
+export default (state = defaultState, action) => {
+  switch (action.type) {
+    case FETCH_USER_SUCCESS:
+      return {
+        ...state,
+        users: action.users,
+      };
+    default:
+      return state;
+  }
+};
