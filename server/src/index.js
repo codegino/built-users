@@ -4,7 +4,7 @@ const cors = require('cors');
 
 const app = express();
 
-const port = process.env.PORT || 3000;
+const port = process.env.PORT || 3001;
 
 app.use(cors());
 app.use(express.static('client/build'));
@@ -16,9 +16,11 @@ app.get('/users', async (req, res) => {
   res.send(users)
 })
 
-app.get('/', (req, res) => {
-  res.sendFile(path.resolve('client', 'build', 'index.html'));
-});
+if (['production'].includes(process.env.NODE_ENV)) {
+  app.get('*', (req, res) => {
+    res.sendFile(path.resolve('client', 'build', 'index.html'));
+  });
+}
 
 app.listen(port, () => {
   console.log(`Starting app at port ${port}`);
