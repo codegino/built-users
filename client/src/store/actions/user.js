@@ -17,10 +17,13 @@ export const fetchUserFail = () => ({
 export const fetchUsers = (count) => async (dispatch) => {
   dispatch(onLoadingStart());
   try {
-    const result = await axios.get(`https://randomuser.me/api/?results=${count}`)
-    const users = result.data.results
+    const users = await axios.get(`http://localhost:3001/users`, {
+      params: {
+        count
+      }
+    })
 
-    dispatch(fetchUserSuccess(users))
+    dispatch(fetchUserSuccess(users.data))
   } catch (e) {
     dispatch(fetchUserFail())
   }
