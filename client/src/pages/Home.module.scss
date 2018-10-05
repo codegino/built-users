@@ -17,7 +17,6 @@
 }
 
 .header {
-  margin-top: $margin-small;
   animation: slideInFromTop 2s 0s ease;
 }
 
@@ -38,9 +37,17 @@
 }
 
 .usersWrapper {
+  width: 100%;
   display: flex;
+  justify-content: space-around;
   flex-wrap: wrap;
-  justify-content: center;
+  flex-direction: column;
+  perspective: 10000px;
+  @media #{$md-device} {
+    flex-direction: row;
+    perspective: 5000px;
+  }
+  padding: 0 $padding-small;
 }
 
 @keyframes slideInFromLeft {

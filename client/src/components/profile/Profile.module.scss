@@ -1,28 +1,5 @@
 @import '../../assets/styles/variables.scss';
 
-.container {
-  display: flex;
-  flex-direction: row;
-  justify-content: space-between;
-  align-items: center;
-  border: 2px solid $color-primary;
-  box-shadow: 0 0 2px 1px $color-primary-accent;
-  border-radius: 6px;
-  width: 90%;
-  padding: $padding-medium 10%;
-  margin: 0 $margin-small;
-  margin-bottom: $margin-medium;
-
-  @media #{$sm-device} {
-    flex-direction: column;
-    width: 40%;
-  }
-
-  @media #{$md-device} {
-    width: 30%;
-  }
-}
-
 .picture {
   border-radius: 50%;
   min-width: 10rem;
@@ -36,5 +13,57 @@
 
   &:hover {
     transform: scale(1.1);
+  }
+}
+
+.container {
+  position: relative;
+  height: 20rem;
+  transition: transform 1s;
+  transform-style: preserve-3d;
+  margin-bottom: 2rem;
+  border-radius: 6px;
+  height: 25rem;
+  cursor: pointer;
+
+  @media #{$sm-device} {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  @media #{$md-device} {
+    width: 45%;
+  }
+  &:hover {
+    box-shadow: $color-dark-dark 0px 0px 2px 1px;
+    transform: rotateY(180deg);
+  }
+}
+
+.face {
+  position: absolute;
+  position: absolute;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  backface-visibility: hidden;
+  border: 2px solid $color-primary;
+  box-shadow: 0 0 2px 1px $color-primary-accent;
+  &Front {
+    background-color: $color-light;
+    color: $color-light-contrast
+  }
+  &Back {
+    border: 2px solid $color-secondary;
+    box-shadow: 0 0 2px 1px $color-secondary-accent;
+    background-color: $color-secondary-dark;
+    color: $color-secondary-dark-contrast;
+    transform: rotateY( 180deg);
+    a {
+      color: $color-secondary-dark-contrast;
+    }
   }
 }
