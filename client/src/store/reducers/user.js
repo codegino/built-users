@@ -8,7 +8,7 @@ import { FETCH_USER_SUCCESS } from '../actions/user';
 // }
 
 const defaultState = {
-  users: ['Carlo', 'Gino']
+  users: []
 };
 
 export default (state = defaultState, action) => {
@@ -16,7 +16,7 @@ export default (state = defaultState, action) => {
     case FETCH_USER_SUCCESS:
       return {
         ...state,
-        users: action.users,
+        users: [...action.users],
       };
     default:
       return state;
