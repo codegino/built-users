@@ -8,6 +8,9 @@
     "dev": "nodemon ./server/src/index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "engines": {
+    "node": "10.6.0"
+  },
   "repository": {
     "type": "git",
     "url": "D:\\\\git\\\\local\\\\built-exam"
