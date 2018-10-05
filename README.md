@@ -12,3 +12,5 @@ Frontend - client/
 Intentionally did not create any Unit or e2e test for simplicity. Will use jest, puppetteer just in case.
 Intentionally did not use any css frameworks to showcase my CSS understanding and responsive design skills
 May look like overengineering but I intentionally added router to allow adding of new pages easily.
+
+I usually use dev libraries to improve quality like eslint, flow, husky, prettier. But will not add for now.
