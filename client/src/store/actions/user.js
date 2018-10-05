@@ -17,7 +17,7 @@ export const fetchUserFail = () => ({
 export const fetchUsers = (count) => async (dispatch) => {
   dispatch(onLoadingStart());
   try {
-    const users = await axios.get(`http://localhost:3001/users`, {
+    const users = await axios.get(`https://built-users.herokuapp.com/users`, {
       params: {
         count
       }
