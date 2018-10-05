@@ -1,9 +1,21 @@
 import React from 'react';
+import { connect } from 'react-redux';
+import './Home.scss';
 
-const HomePage = () => (
-  <div>
-    Hello World
-  </div>
-);
+class HomePage extends React.PureComponent {
+  render() {
+    const users = this.props.users.map(user => <div>{user}</div>)
+    return (
+      <div className='container'>
+        {users}
+        <button className='button'>Button</button>
+      </div>
+    )
+  }
+}
 
-export default HomePage;
+const mapStateToProps = (state) => ({
+  users: state.user.users
+})
+
+export default connect(mapStateToProps)(HomePage);
