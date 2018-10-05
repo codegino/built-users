@@ -1,4 +1,4 @@
-import { FETCH_USER_SUCCESS } from 'store/actions/user';
+import { FETCH_USER_SUCCESS } from '../actions/user';
 
 // type User = {
 //   name: String,
