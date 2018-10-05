@@ -1,12 +1,77 @@
+@import '../assets/styles/variables.scss';
+
 .container {
-  background-color: red;
-  color: blue;
+  color: $color-dark;
   display: flex;
   flex-direction: column;
 }
 
-.button {
-  width: 300px;
-  background-color: yellow;
+.inputWrapper {
+  align-self: center;
+  margin-bottom: $margin-small;
+  animation: slideInFromLeft 2s 0s ease;
 }
 
+.label {
+  animation: slideInFromRight 2s 0s ease;
+}
+
+.header {
+  margin-top: $margin-small;
+  animation: slideInFromTop 2s 0s ease;
+}
+
+.input {
+  height: 20px;
+  text-align: center;
+  margin-right: 1rem;
+}
+
+.button {
+  height: 25px;
+  cursor: pointer;
+  transition: all .5s;
+
+  &:hover {
+    background-color: gray;
+  }
+}
+
+.usersWrapper {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+@keyframes slideInFromLeft {
+  0% {
+    transform: translateX(-50%);
+  }
+  95% {
+    transform: translateX(2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromRight {
+  0% {
+    transform: translateX(50%);
+  }
+  95% {
+    transform: translateX(-2%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideInFromTop {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}

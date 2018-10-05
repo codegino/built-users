@@ -1,0 +1,40 @@
+@import '../../assets/styles/variables.scss';
+
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  border: 2px solid $color-primary;
+  box-shadow: 0 0 2px 1px $color-primary-accent;
+  border-radius: 6px;
+  width: 90%;
+  padding: $padding-medium 10%;
+  margin: 0 $margin-small;
+  margin-bottom: $margin-medium;
+
+  @media #{$sm-device} {
+    flex-direction: column;
+    width: 40%;
+  }
+
+  @media #{$md-device} {
+    width: 30%;
+  }
+}
+
+.picture {
+  border-radius: 50%;
+  min-width: 10rem;
+  min-height: 10rem;
+  border: solid 2px $color-primary-dark;
+  box-shadow: 0 0 1px 1px $color-primary-accent;
+  background-color: $color-primary;
+  transition: transform .5s;
+  margin-bottom: $margin-small;
+  content: loading;
+
+  &:hover {
+    transform: scale(1.1);
+  }
+}

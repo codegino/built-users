@@ -31,10 +31,15 @@ class HomePage extends React.PureComponent {
     return (
       <div className={styles.container}>
         {this.props.loading ? <Loading /> : null}
-        <h1>Test Users</h1>
-        {users}
-        <input type="text" value={this.state.count} onChange={this._onCountChangeHandler} />
-        <button className={styles.button} onClick={this._onFetchUserHandler}>Button</button>
+        <h1 className={styles.header}>Test Users</h1>
+        <p className={styles.label}>Enter number of person to display</p>
+        <div className={styles.inputWrapper}>
+          <input type="number" min="1" value={this.state.count} onChange={this._onCountChangeHandler} className={styles.input} />
+          <button className={styles.button} onClick={this._onFetchUserHandler}>Update</button>
+        </div>
+        <div className={styles.usersWrapper}>
+          {users}
+        </div>
       </div>
     )
   }
